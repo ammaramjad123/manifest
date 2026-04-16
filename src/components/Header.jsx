@@ -128,19 +128,7 @@ export default function Header() {
                   alt="The Peace Practice"
                   className="object-contain transition-all duration-300 h-12 w-auto sm:h-14 md:h-16"
                 />
-               <div>
-  <h1 className="font-serif text-xl sm:text-2xl font-bold tracking-tight">
-    <span className="text-black group-hover:text-[#d4920a] transition-colors duration-300">
-      The Peace
-    </span>
-    <span className="text-[#d4920a] group-hover:text-black transition-colors duration-300">
-      {" "}Practice
-    </span>
-  </h1>
-  <p className="text-xs text-gray-600 hidden sm:block">
-    Ayana Foluke McKanney, <span className="text-[#d4920a] font-semibold">LCSW</span>
-  </p>
-</div>
+               
               </Link>
 
               {/* DESKTOP NAVIGATION */}
@@ -165,77 +153,94 @@ export default function Header() {
                   />
                 </Link>
 
-                <button
-                  onClick={() => handleHashNavigation({ label: "Services", path: "#services", targetPage: "/" })}
-                  className="group relative whitespace-nowrap text-base xl:text-lg font-semibold text-gray-700 hover:text-[#6B46C1] transition-colors duration-300 cursor-pointer"
+                <Link
+                  to="/services"
+                  className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
+                    location.pathname === "/services" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+                  }`}
                 >
                   Services
-                  <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
-                </button>
+                  <span
+                    className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
+                      location.pathname === "/services" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+                    }`}
+                  />
+                </Link>
 
-                <button
-                  onClick={() => handleHashNavigation({ label: "About", path: "#about", targetPage: "/" })}
-                  className="group relative whitespace-nowrap text-base xl:text-lg font-semibold text-gray-700 hover:text-[#6B46C1] transition-colors duration-300 cursor-pointer"
-                >
-                  About
-                  <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
-                </button>
-
-               {/* Desktop Dropdown for Specialties */}
-<div 
-  className="relative"
-  onMouseEnter={() => setShowDropdown(true)}
-  onMouseLeave={() => setShowDropdown(false)}
+               <Link
+  to="/about"
+  className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
+    location.pathname === "/about" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+  }`}
 >
-  <button
-    className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 flex items-center gap-1 text-gray-700 hover:text-[#6B46C1]`}
-  >
-    Specialties
-    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
-    <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
-  </button>
-  
-  {showDropdown && (
-    <div 
-      className="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fadeIn"
-      onMouseEnter={() => setShowDropdown(true)}
-      onMouseLeave={() => setShowDropdown(false)}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6B46C1]/5 to-[#8B5CF6]/5"></div>
-      <div className="relative p-2">
-        {specialtiesList.map((item) => {
-          const Icon = item.icon;
-          return (
-            <button
-              key={item.id}
-              onClick={() => {
-                handleHashNavigation({ label: item.label, path: `#${item.id}`, targetPage: "/" });
-                setShowDropdown(false);
-              }}
-              className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl hover:bg-[#6B46C1]/10 transition-all duration-300 group"
-            >
-              <div className="w-10 h-10 bg-[#6B46C1]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="w-5 h-5 text-[#6B46C1]" />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-gray-800">{item.label}</p>
-                <p className="text-xs text-gray-500">{item.desc}</p>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  )}
-</div>
-
-                <button
-                  onClick={() => handleHashNavigation({ label: "Contact", path: "#contact", targetPage: "/" })}
-                  className="group relative whitespace-nowrap text-base xl:text-lg font-semibold text-gray-700 hover:text-[#6B46C1] transition-colors duration-300 cursor-pointer"
+  About
+  <span
+    className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
+      location.pathname === "/about" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+    }`}
+  />
+</Link>
+                {/* Desktop Dropdown for Specialties */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => setShowDropdown(true)}
+                  onMouseLeave={() => setShowDropdown(false)}
                 >
-                  Contact
-                  <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
-                </button>
+                  <button
+                    className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 flex items-center gap-1 text-gray-700 hover:text-[#6B46C1]`}
+                  >
+                    Specialties
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
+                    <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
+                  </button>
+                  
+                  {showDropdown && (
+                    <div 
+                      className="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fadeIn"
+                      onMouseEnter={() => setShowDropdown(true)}
+                      onMouseLeave={() => setShowDropdown(false)}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#6B46C1]/5 to-[#8B5CF6]/5"></div>
+                      <div className="relative p-2">
+                        {specialtiesList.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <button
+                              key={item.id}
+                              onClick={() => {
+                                handleHashNavigation({ label: item.label, path: `#${item.id}`, targetPage: "/" });
+                                setShowDropdown(false);
+                              }}
+                              className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl hover:bg-[#6B46C1]/10 transition-all duration-300 group"
+                            >
+                              <div className="w-10 h-10 bg-[#6B46C1]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Icon className="w-5 h-5 text-[#6B46C1]" />
+                              </div>
+                              <div className="text-left">
+                                <p className="font-semibold text-gray-800">{item.label}</p>
+                                <p className="text-xs text-gray-500">{item.desc}</p>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+               <Link
+  to="/contact"
+  className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
+    location.pathname === "/contact" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+  }`}
+>
+  Contact
+  <span
+    className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
+      location.pathname === "/contact" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+    }`}
+  />
+</Link>
               </nav>
 
               {/* DESKTOP CTA BUTTONS */}
@@ -301,12 +306,7 @@ export default function Header() {
                   alt="The Peace Practice"
                   className="h-12 w-auto object-contain"
                 />
-                <div>
-  <h2 className="font-serif text-xl font-bold text-black">
-    The Peace Practice
-  </h2>
-  <p className="text-xs text-gray-600">Ayana Foluke McKanney, <span className="text-[#6B46C1] font-semibold">LCSW</span></p>
-</div>
+                
               </Link>
               <button
                 type="button"
@@ -331,25 +331,29 @@ export default function Header() {
                 Home
               </Link>
 
-              <button
-                onClick={() => {
-                  handleHashNavigation({ label: "Services", path: "#services", targetPage: "/" });
-                  setMobileOpen(false);
-                }}
-                className="py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-100 transition-all duration-300 text-left"
+              <Link
+                to="/services"
+                className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
+                  location.pathname === "/services" 
+                    ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+                    : "text-gray-800 hover:bg-gray-100"
+                }`}
+                onClick={() => setMobileOpen(false)}
               >
                 Services
-              </button>
+              </Link>
 
-              <button
-                onClick={() => {
-                  handleHashNavigation({ label: "About", path: "#about", targetPage: "/" });
-                  setMobileOpen(false);
-                }}
-                className="py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-100 transition-all duration-300 text-left"
-              >
-                About
-              </button>
+             <Link
+  to="/about"
+  className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
+    location.pathname === "/about" 
+      ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+      : "text-gray-800 hover:bg-gray-100"
+  }`}
+  onClick={() => setMobileOpen(false)}
+>
+  About
+</Link>
 
               {/* Mobile Dropdown for Specialties */}
               <div className="space-y-2">
@@ -388,15 +392,17 @@ export default function Header() {
                 )}
               </div>
 
-              <button
-                onClick={() => {
-                  handleHashNavigation({ label: "Contact", path: "#contact", targetPage: "/" });
-                  setMobileOpen(false);
-                }}
-                className="py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-100 transition-all duration-300 text-left"
-              >
-                Contact
-              </button>
+              <Link
+  to="/contact"
+  className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
+    location.pathname === "/contact" 
+      ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+      : "text-gray-800 hover:bg-gray-100"
+  }`}
+  onClick={() => setMobileOpen(false)}
+>
+  Contact
+</Link>
             </div>
 
             {/* Mobile CTA Buttons */}
