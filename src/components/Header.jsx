@@ -126,7 +126,7 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="The Peace Practice"
-                  className="object-contain transition-all duration-300 h-12 w-auto sm:h-14 md:h-16"
+                  className="object-contain transition-all duration-300 h-22 w-auto sm:h-18 md:h-26"
                 />
                
               </Link>
@@ -304,7 +304,7 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="The Peace Practice"
-                  className="h-12 w-auto object-contain"
+                  className="h-22 w-auto object-contain"
                 />
                 
               </Link>

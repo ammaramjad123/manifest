@@ -29,9 +29,9 @@ export default function AboutProcessSection() {
   ];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
+    <section className="relative w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#fefcf7]">
       {/* Subtle Energy Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(107,70,193,0.03),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(159,76,187,0.03),transparent_70%)]" />
 
       <div className="relative max-w-5xl mx-auto">
         {/* Title Animation */}
@@ -42,14 +42,14 @@ export default function AboutProcessSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6">
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#6B46C1] font-['Montserrat']">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#9f4cbb]/10 border border-[#9f4cbb]/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#9f4cbb]" />
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#9f4cbb] font-['Montserrat']">
               The Path Forward
             </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black text-center font-['Montserrat']">
-            How It <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">Works</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-800 text-center font-['Montserrat']">
+            How It <span className="bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] bg-clip-text text-transparent">Works</span>
           </h2>
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Four simple steps to healing, growth, and transformation. No pressure, just partnership.
@@ -65,7 +65,7 @@ export default function AboutProcessSection() {
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute left-0 top-0 w-full bg-gradient-to-b from-[#6B46C1] via-[#8B5CF6] to-[#6B46C1]"
+              className="absolute left-0 top-0 w-full bg-gradient-to-b from-[#9f4cbb] via-[#c77dff] to-[#9f4cbb]"
             />
             {/* Moving Energy Pulse */}
             <motion.div
@@ -75,7 +75,7 @@ export default function AboutProcessSection() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute left-1/2 -translate-x-1/2 w-[8px] h-[80px] rounded-full bg-gradient-to-b from-white/80 via-[#6B46C1] to-transparent blur-sm"
+              className="absolute left-1/2 -translate-x-1/2 w-[8px] h-[80px] rounded-full bg-gradient-to-b from-white/80 via-[#9f4cbb] to-transparent blur-sm"
             />
           </div>
 
@@ -97,21 +97,21 @@ export default function AboutProcessSection() {
                   }}
                   className={`flex ${i % 2 === 0 ? "justify-start" : "justify-end"}`}
                 >
-                  <div className="relative max-w-[90%] sm:max-w-md p-6 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-[#6B46C1]/20 transition-all duration-300">
+                  <div className="relative max-w-[90%] sm:max-w-md p-6 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-[#9f4cbb]/20 transition-all duration-300">
                     {/* Step Number */}
-                    <div className="absolute -top-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white flex items-center justify-center text-sm font-black shadow-lg font-['Montserrat']">
+                    <div className="absolute -top-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] text-white flex items-center justify-center text-sm font-black shadow-lg font-['Montserrat']">
                       {i + 1}
                     </div>
 
                     {/* Icon */}
                     <div className="mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#6B46C1]/10 flex items-center justify-center text-[#6B46C1]">
+                      <div className="w-12 h-12 rounded-xl bg-[#9f4cbb]/10 flex items-center justify-center text-[#9f4cbb]">
                         <StepIcon size={24} />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-black text-black font-['Montserrat']">
+                    <h3 className="text-base sm:text-lg font-black text-gray-800 font-['Montserrat']">
                       {step.title}
                     </h3>
 
@@ -121,7 +121,7 @@ export default function AboutProcessSection() {
                     </p>
 
                     {/* Connection Line to Center */}
-                    <div className={`hidden sm:block absolute top-1/2 ${i % 2 === 0 ? "right-[-40px]" : "left-[-40px]"} w-[40px] h-[2px] bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] opacity-40`} />
+                    <div className={`hidden sm:block absolute top-1/2 ${i % 2 === 0 ? "right-[-40px]" : "left-[-40px]"} w-[40px] h-[2px] bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] opacity-40`} />
                   </div>
                 </motion.div>
               );
@@ -140,7 +140,7 @@ export default function AboutProcessSection() {
           <a
             href="https://calendly.com/manifestcoachingllc"
             target="_blank"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-black hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 font-['Montserrat'] text-sm uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] text-white font-black hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 font-['Montserrat'] text-sm uppercase tracking-wider"
           >
             <Calendar className="w-4 h-4" />
             Start Your Journey Today
