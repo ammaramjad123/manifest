@@ -499,11 +499,18 @@ export default function ServicesPage() {
     </svg>
 
     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-      <h3 className="text-xl md:text-2xl font-black text-black font-['Montserrat']">
+      <h3 className="text-base md:text-2xl font-black text-black font-['Montserrat']">
         {services[activeService].title}
       </h3>
-      <p className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">
-        {services[activeService].subtitle}
+      <p className="text-gray-500 text-xs md:text-sm font-['Plus_Jakarta_Sans'] text-center leading-tight">
+       {services[activeService].subtitle === "Transformational Coaching" ? (
+  <>
+    Transformational <br className="md:hidden" />
+    Coaching
+  </>
+) : (
+  services[activeService].subtitle
+)}
       </p>
     </div>
 

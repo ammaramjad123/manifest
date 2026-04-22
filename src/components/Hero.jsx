@@ -83,7 +83,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-[#0a0a1a] pt-7 sm:pt-50">
+    <section className="relative w-full min-h-screen overflow-hidden bg-[#0a0a1a] pt-35 sm:pt-50">
       
       {/* 4K Therapy Background Image with DARK Overlay */}
       <div className="absolute inset-0 z-0">
