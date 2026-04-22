@@ -22,6 +22,11 @@ export default function AboutProcessSection() {
       icon: Heart,
     },
     {
+      title: "The Journey Begins",
+      desc: "Whether it's ART therapy, DBT skills, or the MANIFEST coaching framework, we begin your personalized path toward healing, growth, or transformation.",
+      icon: Heart,
+    },
+    {
       title: "Evolution & Integration",
       desc: "We track progress, celebrate breakthroughs, and adjust as needed. You leave with tools, resilience, and a clear path to your next chapter.",
       icon: Target,
@@ -29,9 +34,9 @@ export default function AboutProcessSection() {
   ];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#fefcf7]">
+    <section className="relative w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
       {/* Subtle Energy Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(159,76,187,0.03),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(192,144,80,0.03),transparent_70%)]" />
 
       <div className="relative max-w-5xl mx-auto">
         {/* Title Animation */}
@@ -42,14 +47,14 @@ export default function AboutProcessSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#9f4cbb]/10 border border-[#9f4cbb]/20 mb-6">
-            <Sparkles className="w-4 h-4 text-[#9f4cbb]" />
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#9f4cbb] font-['Montserrat']">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#c09050] font-['Montserrat']">
               The Path Forward
             </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-800 text-center font-['Montserrat']">
-            How It <span className="bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] bg-clip-text text-transparent">Works</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black text-center font-['Montserrat']">
+            How It <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">Works</span>
           </h2>
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Four simple steps to healing, growth, and transformation. No pressure, just partnership.
@@ -65,7 +70,7 @@ export default function AboutProcessSection() {
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute left-0 top-0 w-full bg-gradient-to-b from-[#9f4cbb] via-[#c77dff] to-[#9f4cbb]"
+              className="absolute left-0 top-0 w-full bg-gradient-to-b from-[#c09050] via-[#d4a84b] to-[#c09050]"
             />
             {/* Moving Energy Pulse */}
             <motion.div
@@ -75,7 +80,7 @@ export default function AboutProcessSection() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute left-1/2 -translate-x-1/2 w-[8px] h-[80px] rounded-full bg-gradient-to-b from-white/80 via-[#9f4cbb] to-transparent blur-sm"
+              className="absolute left-1/2 -translate-x-1/2 w-[8px] h-[80px] rounded-full bg-gradient-to-b from-white/80 via-[#c09050] to-transparent blur-sm"
             />
           </div>
 
@@ -97,31 +102,31 @@ export default function AboutProcessSection() {
                   }}
                   className={`flex ${i % 2 === 0 ? "justify-start" : "justify-end"}`}
                 >
-                  <div className="relative max-w-[90%] sm:max-w-md p-6 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-[#9f4cbb]/20 transition-all duration-300">
+                  <div className="relative max-w-[90%] sm:max-w-md p-6 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-[#c09050]/30 transition-all duration-300">
                     {/* Step Number */}
-                    <div className="absolute -top-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] text-white flex items-center justify-center text-sm font-black shadow-lg font-['Montserrat']">
+                    <div className="absolute -top-4 left-4 w-8 h-8 rounded-full bg-[#c09050] text-white flex items-center justify-center text-sm font-black shadow-lg font-['Montserrat']">
                       {i + 1}
                     </div>
 
                     {/* Icon */}
                     <div className="mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#9f4cbb]/10 flex items-center justify-center text-[#9f4cbb]">
+                      <div className="w-12 h-12 rounded-xl bg-[#c09050]/10 flex items-center justify-center text-[#c09050]">
                         <StepIcon size={24} />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-black text-gray-800 font-['Montserrat']">
+                    <h3 className="text-base sm:text-lg font-black text-black font-['Montserrat']">
                       {step.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed font-['Plus_Jakarta_Sans']">
+                    <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed font-['Plus_Jakarta_Sans']">
                       {step.desc}
                     </p>
 
                     {/* Connection Line to Center */}
-                    <div className={`hidden sm:block absolute top-1/2 ${i % 2 === 0 ? "right-[-40px]" : "left-[-40px]"} w-[40px] h-[2px] bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] opacity-40`} />
+                    <div className={`hidden sm:block absolute top-1/2 ${i % 2 === 0 ? "right-[-40px]" : "left-[-40px]"} w-[40px] h-[2px] bg-gradient-to-r from-[#c09050] to-[#d4a84b] opacity-40`} />
                   </div>
                 </motion.div>
               );
@@ -129,7 +134,7 @@ export default function AboutProcessSection() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - Updated with Black + Gold Border */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +145,7 @@ export default function AboutProcessSection() {
           <a
             href="https://calendly.com/manifestcoachingllc"
             target="_blank"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#9f4cbb] to-[#c77dff] text-white font-black hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 font-['Montserrat'] text-sm uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black border-2 border-[#c09050] text-white font-black hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 font-['Montserrat'] text-sm uppercase tracking-wider"
           >
             <Calendar className="w-4 h-4" />
             Start Your Journey Today

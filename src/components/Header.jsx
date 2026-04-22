@@ -29,7 +29,7 @@ export default function Header() {
   const location = useLocation();
 
   // Brand colors
-  const brandPurple = "#6B46C1";
+  const brandGold = "#c09050";
   const brandWhite = "#FFFFFF";
 
   // Hash navigation function
@@ -142,13 +142,13 @@ export default function Header() {
                     }
                   }}
                   className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
-                    isActive("/") ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+                    isActive("/") ? "text-[#c09050]" : "text-gray-700 hover:text-[#c09050]"
                   }`}
                 >
                   Home
                   <span
                     className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
-                      isActive("/") ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+                      isActive("/") ? "w-full bg-[#c09050]" : "w-0 bg-[#c09050]"
                     }`}
                   />
                 </Link>
@@ -156,13 +156,13 @@ export default function Header() {
                 <Link
                   to="/services"
                   className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
-                    location.pathname === "/services" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+                    location.pathname === "/services" ? "text-[#c09050]" : "text-gray-700 hover:text-[#c09050]"
                   }`}
                 >
                   Services
                   <span
                     className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
-                      location.pathname === "/services" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+                      location.pathname === "/services" ? "w-full bg-[#c09050]" : "w-0 bg-[#c09050]"
                     }`}
                   />
                 </Link>
@@ -170,13 +170,13 @@ export default function Header() {
                <Link
   to="/about"
   className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
-    location.pathname === "/about" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+    location.pathname === "/about" ? "text-[#c09050]" : "text-gray-700 hover:text-[#c09050]"
   }`}
 >
   About
   <span
     className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
-      location.pathname === "/about" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+      location.pathname === "/about" ? "w-full bg-[#c09050]" : "w-0 bg-[#c09050]"
     }`}
   />
 </Link>
@@ -187,11 +187,11 @@ export default function Header() {
                   onMouseLeave={() => setShowDropdown(false)}
                 >
                   <button
-                    className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 flex items-center gap-1 text-gray-700 hover:text-[#6B46C1]`}
+                    className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 flex items-center gap-1 text-gray-700 hover:text-[#c09050]`}
                   >
                     Specialties
                     <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
-                    <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#6B46C1] transition-all duration-300 group-hover:w-full" />
+                    <span className="absolute left-0 top-full mt-1 h-0.5 w-0 rounded-full bg-[#c09050] transition-all duration-300 group-hover:w-full" />
                   </button>
                   
                   {showDropdown && (
@@ -200,29 +200,35 @@ export default function Header() {
                       onMouseEnter={() => setShowDropdown(true)}
                       onMouseLeave={() => setShowDropdown(false)}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#6B46C1]/5 to-[#8B5CF6]/5"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#c09050]/5 to-[#d4a84b]/5"></div>
                       <div className="relative p-2">
-                        {specialtiesList.map((item) => {
-                          const Icon = item.icon;
-                          return (
-                            <button
-                              key={item.id}
-                              onClick={() => {
-                                handleHashNavigation({ label: item.label, path: `#${item.id}`, targetPage: "/" });
-                                setShowDropdown(false);
-                              }}
-                              className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl hover:bg-[#6B46C1]/10 transition-all duration-300 group"
-                            >
-                              <div className="w-10 h-10 bg-[#6B46C1]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Icon className="w-5 h-5 text-[#6B46C1]" />
-                              </div>
-                              <div className="text-left">
-                                <p className="font-semibold text-gray-800">{item.label}</p>
-                                <p className="text-xs text-gray-500">{item.desc}</p>
-                              </div>
-                            </button>
-                          );
-                        })}
+                       {specialtiesList.map((item) => {
+  const Icon = item.icon;
+  // Map the IDs to actual page routes
+  const routeMap = {
+    anxiety: "/specialties/anxiety-depression",
+    trauma: "/specialties/trauma-ptsd",
+    women: "/specialties/women-issues",
+    coaching: "/specialties/life-coaching",
+    immigration: "/specialties/immigration"
+  };
+  return (
+    <Link
+      key={item.id}
+      to={routeMap[item.id]}
+      onClick={() => setShowDropdown(false)}
+      className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl hover:bg-[#c09050]/10 transition-all duration-300 group"
+    >
+      <div className="w-10 h-10 bg-[#c09050]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+        <Icon className="w-5 h-5 text-[#c09050]" />
+      </div>
+      <div className="text-left">
+        <p className="font-semibold text-gray-800">{item.label}</p>
+        <p className="text-xs text-gray-500">{item.desc}</p>
+      </div>
+    </Link>
+  );
+})}
                       </div>
                     </div>
                   )}
@@ -231,13 +237,13 @@ export default function Header() {
                <Link
   to="/contact"
   className={`group relative whitespace-nowrap text-base xl:text-lg font-semibold transition-colors duration-300 ${
-    location.pathname === "/contact" ? "text-[#6B46C1]" : "text-gray-700 hover:text-[#6B46C1]"
+    location.pathname === "/contact" ? "text-[#c09050]" : "text-gray-700 hover:text-[#c09050]"
   }`}
 >
   Contact
   <span
     className={`absolute left-0 top-full mt-1 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
-      location.pathname === "/contact" ? "w-full bg-[#6B46C1]" : "w-0 bg-[#6B46C1]"
+      location.pathname === "/contact" ? "w-full bg-[#c09050]" : "w-0 bg-[#c09050]"
     }`}
   />
 </Link>
@@ -248,14 +254,14 @@ export default function Header() {
                 <a
                   href="https://calendly.com/manifestcoachingllc"
                   target="_blank"
-                  className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-bold text-sm xl:text-base bg-[#6B46C1]/10 border border-[#6B46C1]/20 text-[#6B46C1] hover:bg-[#6B46C1] hover:text-white transition-all duration-300"
+                  className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-bold text-sm xl:text-base bg-[#c09050]/10 border border-[#c09050]/20 text-[#c09050] hover:bg-[#c09050] hover:text-white transition-all duration-300"
                 >
                   <Calendar size={16} className="xl:w-[18px] xl:h-[18px]" />
                   <span>Book Consultation</span>
                 </a>
                 <a href="#contact">
                   <button
-                    className="flex items-center gap-2 px-5 xl:px-6 py-2 xl:py-2.5 rounded-full font-bold text-sm xl:text-base bg-[#6B46C1] text-white shadow-lg hover:bg-[#8B5CF6] hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                    className="flex items-center gap-2 px-5 xl:px-6 py-2 xl:py-2.5 rounded-full font-bold text-sm xl:text-base bg-black border-2 border-[#c09050] text-white shadow-lg hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                   >
                     <Phone size={16} className="xl:w-[18px] xl:h-[18px]" />
                     <span>Call Now</span>
@@ -268,7 +274,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(true)}
                 className="lg:hidden flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full transition hover:bg-gray-100"
               >
-                <Menu size={24} className="sm:w-6 sm:h-6 text-[#6B46C1]" />
+                <Menu size={24} className="sm:w-6 sm:h-6 text-[#c09050]" />
               </button>
             </div>
           </div>
@@ -323,7 +329,7 @@ export default function Header() {
                 to="/"
                 className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
                   isActive("/") 
-                    ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+                    ? "bg-[#c09050]/10 text-[#c09050] border-l-4 border-[#c09050]" 
                     : "text-gray-800 hover:bg-gray-100"
                 }`}
                 onClick={() => setMobileOpen(false)}
@@ -335,7 +341,7 @@ export default function Header() {
                 to="/services"
                 className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
                   location.pathname === "/services" 
-                    ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+                    ? "bg-[#c09050]/10 text-[#c09050] border-l-4 border-[#c09050]" 
                     : "text-gray-800 hover:bg-gray-100"
                 }`}
                 onClick={() => setMobileOpen(false)}
@@ -347,7 +353,7 @@ export default function Header() {
   to="/about"
   className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
     location.pathname === "/about" 
-      ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+      ? "bg-[#c09050]/10 text-[#c09050] border-l-4 border-[#c09050]" 
       : "text-gray-800 hover:bg-gray-100"
   }`}
   onClick={() => setMobileOpen(false)}
@@ -367,27 +373,32 @@ export default function Header() {
                 
                 {mobileDropdownOpen && (
                   <div className="ml-4 space-y-2 animate-fadeIn">
-                    {specialtiesList.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => {
-                            handleHashNavigation({ label: item.label, path: `#${item.id}`, targetPage: "/" });
-                            setMobileOpen(false);
-                          }}
-                          className="flex items-center space-x-3 w-full py-3 px-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
-                        >
-                          <div className="w-8 h-8 bg-[#6B46C1]/10 rounded-full flex items-center justify-center">
-                            <Icon className="w-4 h-4 text-[#6B46C1]" />
-                          </div>
-                          <div className="text-left">
-                            <p className="font-semibold text-gray-800">{item.label}</p>
-                            <p className="text-xs text-gray-500">{item.desc}</p>
-                          </div>
-                        </button>
-                      );
-                    })}
+                   {specialtiesList.map((item) => {
+  const Icon = item.icon;
+  const routeMap = {
+    anxiety: "/specialties/anxiety-depression",
+    trauma: "/specialties/trauma-ptsd",
+    women: "/specialties/women-issues",
+    coaching: "/specialties/life-coaching",
+    immigration: "/specialties/immigration"
+  };
+  return (
+    <Link
+      key={item.id}
+      to={routeMap[item.id]}
+      onClick={() => setMobileOpen(false)}
+      className="flex items-center space-x-3 w-full py-3 px-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
+    >
+      <div className="w-8 h-8 bg-[#c09050]/10 rounded-full flex items-center justify-center">
+        <Icon className="w-4 h-4 text-[#c09050]" />
+      </div>
+      <div className="text-left">
+        <p className="font-semibold text-gray-800">{item.label}</p>
+        <p className="text-xs text-gray-500">{item.desc}</p>
+      </div>
+    </Link>
+  );
+})}
                   </div>
                 )}
               </div>
@@ -396,7 +407,7 @@ export default function Header() {
   to="/contact"
   className={`py-3 px-4 rounded-xl text-lg sm:text-xl font-semibold transition-all duration-300 ${
     location.pathname === "/contact" 
-      ? "bg-[#6B46C1]/10 text-[#6B46C1] border-l-4 border-[#6B46C1]" 
+      ? "bg-[#c09050]/10 text-[#c09050] border-l-4 border-[#c09050]" 
       : "text-gray-800 hover:bg-gray-100"
   }`}
   onClick={() => setMobileOpen(false)}
@@ -411,7 +422,7 @@ export default function Header() {
                 href="https://calendly.com/manifestcoachingllc"
                 target="_blank"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-3 w-full py-3.5 sm:py-4 rounded-full border-2 border-[#6B46C1] text-[#6B46C1] font-bold text-base sm:text-lg hover:bg-[#6B46C1] hover:text-white transition-all duration-300"
+                className="flex items-center justify-center gap-3 w-full py-3.5 sm:py-4 rounded-full border-2 border-[#c09050] text-[#c09050] font-bold text-base sm:text-lg hover:bg-[#c09050] hover:text-white transition-all duration-300"
               >
                 <Calendar size={18} className="sm:w-5 sm:h-5" />
                 <span>Book Consultation</span>
@@ -419,7 +430,7 @@ export default function Header() {
               <a href="#contact">
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-3 w-full py-3.5 sm:py-4 rounded-full bg-[#6B46C1] text-white font-bold text-base sm:text-lg hover:bg-[#8B5CF6] transition-all duration-300 shadow-lg"
+                  className="flex items-center justify-center gap-3 w-full py-3.5 sm:py-4 rounded-full bg-black border-2 border-[#c09050] text-white font-bold text-base sm:text-lg hover:bg-[#c09050] hover:border-[#c09050] transition-all duration-300 shadow-lg"
                 >
                   <Phone size={18} className="sm:w-5 sm:h-5" />
                   <span>Call (929) 900-3056</span>
@@ -430,29 +441,29 @@ export default function Header() {
             {/* Trust Badges */}
             <div className="p-5 sm:p-6 pt-0 flex flex-wrap gap-4 justify-center">
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                <Shield size={14} className="sm:w-4 sm:h-4 text-[#6B46C1]" />
+                <Shield size={14} className="sm:w-4 sm:h-4 text-[#c09050]" />
                 <span>26+ Years Experience</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                <CheckCircle size={14} className="sm:w-4 sm:h-4 text-[#6B46C1]" />
+                <CheckCircle size={14} className="sm:w-4 sm:h-4 text-[#c09050]" />
                 <span>NYU Graduate</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                <Clock size={14} className="sm:w-4 sm:h-4 text-[#6B46C1]" />
+                <Clock size={14} className="sm:w-4 sm:h-4 text-[#c09050]" />
                 <span>Accepting New Clients</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                <Video size={14} className="sm:w-4 sm:h-4 text-[#6B46C1]" />
+                <Video size={14} className="sm:w-4 sm:h-4 text-[#c09050]" />
                 <span>Online Therapy</span>
               </div>
             </div>
 
             {/* Phone Numbers Section */}
             <div className="p-5 sm:p-6 pt-0 flex flex-col gap-2 text-center">
-              <a href="tel:+19299003056" className="text-sm text-gray-600 hover:text-[#6B46C1]">
+              <a href="tel:+19299003056" className="text-sm text-gray-600 hover:text-[#c09050]">
                 (929) 900-3056
               </a>
-              <a href="tel:+19299252554" className="text-sm text-gray-600 hover:text-[#6B46C1]">
+              <a href="tel:+19299252554" className="text-sm text-gray-600 hover:text-[#c09050]">
                 (929) 925-2554
               </a>
             </div>

@@ -179,9 +179,9 @@ export default function FAQSection() {
   return (
     <section id="faq" className="relative w-full py-16 sm:py-24 md:py-32 bg-white overflow-hidden">
       
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #6B46C1 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #c09050 0.5px, transparent 0.5px)`,
           backgroundSize: '30px 30px'
         }} />
       </div>
@@ -197,10 +197,10 @@ export default function FAQSection() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6"
           >
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#6B46C1] font-['Montserrat']">
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#c09050] font-['Montserrat']">
               Frequently Asked Questions
             </span>
           </motion.div>
@@ -210,7 +210,7 @@ export default function FAQSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']"
           >
             Got Questions?{" "}
-            <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
               I've Got Answers.
             </span>
           </motion.h2>
@@ -236,7 +236,7 @@ export default function FAQSection() {
               placeholder="Search your question..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#6B46C1] focus:ring-2 focus:ring-[#6B46C1]/20 transition-all duration-300 font-['Plus_Jakarta_Sans']"
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#c09050] focus:ring-2 focus:ring-[#c09050]/20 transition-all duration-300 font-['Plus_Jakarta_Sans']"
             />
           </div>
         </motion.div>
@@ -257,7 +257,7 @@ export default function FAQSection() {
                 }}
                 className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap font-['Montserrat'] ${
                   activeCategory === category.id
-                    ? "bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white shadow-lg"
+                    ? "bg-gradient-to-r from-[#c09050] to-[#d4a84b] text-white shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -279,7 +279,7 @@ export default function FAQSection() {
                   setActiveCategory("all");
                   setOpenItems({});
                 }}
-                className="mt-4 text-[#6B46C1] font-semibold hover:underline"
+                className="mt-4 text-[#c09050] font-semibold hover:underline"
               >
                 Clear filters
               </button>
@@ -297,11 +297,11 @@ export default function FAQSection() {
                   <span className="font-semibold text-black text-sm sm:text-base md:text-lg pr-4 font-['Montserrat']">
                     {faq.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full bg-[#6B46C1]/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${openItems[faq.id] ? 'bg-[#6B46C1]' : ''}`}>
+                  <div className={`w-8 h-8 rounded-full bg-[#c09050]/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${openItems[faq.id] ? 'bg-[#c09050]' : ''}`}>
                     {openItems[faq.id] ? (
                       <Minus className="w-4 h-4 text-white" />
                     ) : (
-                      <Plus className="w-4 h-4 text-[#6B46C1]" />
+                      <Plus className="w-4 h-4 text-[#c09050]" />
                     )}
                   </div>
                 </button>
@@ -328,12 +328,12 @@ export default function FAQSection() {
           animate={controls}
           className="mt-12 md:mt-16"
         >
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#6B46C1]/10 to-[#8B5CF6]/10 border border-[#6B46C1]/20 p-6 sm:p-8 text-center">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-[#6B46C1]/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#8B5CF6]/20 rounded-full blur-3xl"></div>
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#c09050]/10 to-[#d4a84b]/10 border border-[#c09050]/20 p-6 sm:p-8 text-center">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#c09050]/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#d4a84b]/20 rounded-full blur-3xl"></div>
             
             <div className="relative z-10">
-              <MessageCircle className="w-12 h-12 text-[#6B46C1] mx-auto mb-4" />
+              <MessageCircle className="w-12 h-12 text-[#c09050] mx-auto mb-4" />
               <h3 className="text-xl sm:text-2xl font-black text-black mb-2 font-['Montserrat']">
                 Still Have Questions?
               </h3>
@@ -344,14 +344,14 @@ export default function FAQSection() {
                 <a
                   href="https://calendly.com/manifestcoachingllc"
                   target="_blank"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black border-2 border-[#c09050] text-white font-bold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Book Free Consultation
                 </a>
                 <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#6B46C1] text-[#6B46C1] font-bold hover:bg-[#6B46C1] hover:text-white transition-all duration-300 font-['Montserrat']"
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#c09050] text-[#c09050] font-bold hover:bg-[#c09050] hover:text-white transition-all duration-300 font-['Montserrat']"
                 >
                   <Mail className="w-4 h-4" />
                   Send Email
@@ -368,17 +368,17 @@ export default function FAQSection() {
           className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center"
         >
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Phone className="w-4 h-4 text-[#6B46C1]" />
+            <Phone className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">(929) 900-3056</span>
           </div>
           <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Mail className="w-4 h-4 text-[#6B46C1]" />
+            <Mail className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">manifestcoachingllc@gmail.com</span>
           </div>
           <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Shield className="w-4 h-4 text-[#6B46C1]" />
+            <Shield className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">HIPAA Compliant</span>
           </div>
         </motion.div>

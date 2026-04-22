@@ -41,22 +41,22 @@ export default function ServicesHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-white via-[#6B46C1]/3 to-white flex flex-col items-center justify-center overflow-x-hidden pt-34 pb-20">
+    <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center overflow-x-hidden pt-44 pb-20">
       
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div 
-          className="absolute top-20 right-10 w-96 h-96 bg-[#6B46C1]/10 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-[#c09050]/5 rounded-full blur-3xl"
           animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 left-10 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-96 h-96 bg-[#d4a84b]/5 rounded-full blur-3xl"
           animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6B46C1]/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#c09050]/3 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -67,7 +67,7 @@ export default function ServicesHero() {
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#6B46C1]/30 rounded-full"
+            className="absolute w-1 h-1 bg-[#c09050]/20 rounded-full"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -102,10 +102,10 @@ export default function ServicesHero() {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 backdrop-blur-2xl"
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 backdrop-blur-2xl"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#6B46C1]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6B46C1]">
+            <Sparkles className="w-3.5 h-3.5 text-[#c09050]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c09050]">
               Three Pathways to Peace
             </span>
           </motion.div>
@@ -116,13 +116,13 @@ export default function ServicesHero() {
             className="relative z-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-black tracking-tighter leading-[1.1] uppercase break-words"
           >
             Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#6B46C1] to-[#8B5CF6] italic font-medium tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#c09050] to-[#d4a84b] italic font-medium tracking-tight">
               Journey.
             </span>
             <br />
-           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6B46C1] via-[#8B5CF6] to-[#6B46C1]">
-  Our Partnership&nbsp;
-</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c09050] via-[#d4a84b] to-[#c09050]">
+              Our Partnership&nbsp;
+            </span>
           </motion.h1>
 
           {/* Description */}
@@ -134,14 +134,14 @@ export default function ServicesHero() {
             whether you're seeking healing, growth, or transformation.
           </motion.p>
 
-          {/* Buttons */}
+          {/* Buttons - Updated with Black + Gold Border */}
           <motion.div
             variants={itemVariants}
             className="relative z-40 flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-4"
           >
             <a
               href="#process"
-              className="group inline-flex items-center gap-2 h-12 sm:h-14 px-6 sm:px-8 rounded-2xl bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-black uppercase tracking-wider text-xs sm:text-sm hover:scale-105 transition-all shadow-2xl shadow-[#6B46C1]/20 active:scale-95"
+              className="group inline-flex items-center gap-2 h-12 sm:h-14 px-6 sm:px-8 rounded-2xl bg-black border-2 border-[#c09050] text-white font-black uppercase tracking-wider text-xs sm:text-sm hover:bg-[#c09050] hover:border-[#c09050] hover:scale-105 transition-all shadow-2xl active:scale-95"
             >
               Explore Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -149,7 +149,7 @@ export default function ServicesHero() {
               href="https://calendly.com/manifestcoachingllc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 sm:h-14 px-6 sm:px-8 rounded-2xl bg-white/80 border border-[#6B46C1]/20 backdrop-blur-3xl text-[#6B46C1] font-black uppercase tracking-wider text-xs sm:text-sm hover:bg-[#6B46C1]/10 transition-all"
+              className="inline-flex items-center gap-2 h-12 sm:h-14 px-6 sm:px-8 rounded-2xl bg-transparent border-2 border-[#c09050] text-[#c09050] font-black uppercase tracking-wider text-xs sm:text-sm hover:bg-[#c09050] hover:text-white hover:border-[#c09050] transition-all"
             >
               Book Consultation
             </a>
@@ -167,9 +167,9 @@ export default function ServicesHero() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="flex flex-col items-center text-center space-y-1 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#6B46C1]/10 shadow-sm"
+              className="flex flex-col items-center text-center space-y-1 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#c09050]/10 shadow-sm"
             >
-              <span className="text-[10px] font-black uppercase tracking-wider text-[#6B46C1]/60">{stat.label}</span>
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#c09050]/60">{stat.label}</span>
               <span className="text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tighter">{stat.value}</span>
             </motion.div>
           ))}
@@ -187,7 +187,7 @@ export default function ServicesHero() {
           <span className="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-wider">Scroll</span>
           <div className="w-4 h-6 sm:w-5 sm:h-8 border border-gray-300 rounded-full flex justify-center">
             <motion.div 
-              className="w-1 h-1.5 bg-[#6B46C1] rounded-full mt-1"
+              className="w-1 h-1.5 bg-[#c09050] rounded-full mt-1"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />

@@ -186,7 +186,7 @@ export default function PathForwardAssessment() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #6B46C1 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #c09050 0.5px, transparent 0.5px)`,
           backgroundSize: '30px 30px'
         }} />
       </div>
@@ -203,10 +203,10 @@ export default function PathForwardAssessment() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6"
           >
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#6B46C1] font-['Montserrat']">
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#c09050] font-['Montserrat']">
               The Path Forward
             </span>
           </motion.div>
@@ -216,7 +216,7 @@ export default function PathForwardAssessment() {
             className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']"
           >
             Clinical Therapy or{" "}
-            <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
               Transformational Coaching?
             </span>
           </motion.h2>
@@ -249,7 +249,7 @@ export default function PathForwardAssessment() {
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] rounded-full transition-all duration-500"
+                      className="h-full bg-gradient-to-r from-[#c09050] to-[#d4a84b] rounded-full transition-all duration-500"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -268,16 +268,16 @@ export default function PathForwardAssessment() {
                         onClick={() => handleAnswer(option.value)}
                         className={`w-full text-left p-4 sm:p-5 rounded-xl border transition-all duration-300 group ${
                           selectedOption === option.value
-                            ? "border-[#6B46C1] bg-[#6B46C1]/5 shadow-md"
-                            : "border-gray-200 hover:border-[#6B46C1] hover:bg-[#6B46C1]/5"
+                            ? "border-[#c09050] bg-[#c09050]/5 shadow-md"
+                            : "border-gray-200 hover:border-[#c09050] hover:bg-[#c09050]/5"
                         }`}
                       >
                         <div className="flex items-start gap-3">
                           {/* Custom Radio Button */}
                           <div className={`w-5 h-5 mt-0.5 rounded-full border-2 flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
                             selectedOption === option.value
-                              ? "border-[#6B46C1] bg-[#6B46C1]"
-                              : "border-gray-300 group-hover:border-[#6B46C1]"
+                              ? "border-[#c09050] bg-[#c09050]"
+                              : "border-gray-300 group-hover:border-[#c09050]"
                           }`}>
                             {selectedOption === option.value && (
                               <div className="w-2 h-2 rounded-full bg-white" />
@@ -307,9 +307,9 @@ export default function PathForwardAssessment() {
                       }}
                       className={`h-2 rounded-full transition-all duration-300 ${
                         idx === currentQuestion 
-                          ? "w-6 bg-[#6B46C1]" 
+                          ? "w-6 bg-[#c09050]" 
                           : answers[questions[idx].id] 
-                            ? "w-2 bg-[#6B46C1]/50" 
+                            ? "w-2 bg-[#c09050]/50" 
                             : "w-2 bg-gray-200"
                       }`}
                     />
@@ -323,8 +323,8 @@ export default function PathForwardAssessment() {
                 <div className="text-center mb-6">
                   <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-r ${
                     result?.type === "therapy" 
-                      ? "from-[#6B46C1] to-[#8B5CF6]" 
-                      : "from-[#D69E2E] to-[#F6E05E]"
+                      ? "from-[#c09050] to-[#d4a84b]" 
+                      : "from-[#c09050] to-[#d4a84b]"
                   } flex items-center justify-center shadow-lg mb-4`}>
                     {result?.type === "therapy" ? (
                       <Heart className="w-10 h-10 text-white" />
@@ -345,11 +345,11 @@ export default function PathForwardAssessment() {
                   {result?.type === "therapy" ? (
                     <>
                       <div className="flex items-center gap-2 mb-3">
-                        <Heart className="w-5 h-5 text-[#6B46C1]" />
+                        <Heart className="w-5 h-5 text-[#c09050]" />
                         <h4 className="font-bold text-black font-['Montserrat']">Clinical Therapy</h4>
                       </div>
                       <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-['Plus_Jakarta_Sans']">
-                        You are likely in a season of <span className="font-bold text-[#6B46C1]">Restoration</span>. 
+                        You are likely in a season of <span className="font-bold text-[#c09050]">Restoration</span>. 
                         Therapy provides a regulated medical model to treat the "why" behind your distress. 
                         It is the necessary foundation for healing—especially when navigating a new diagnosis, 
                         complicated grief, or traumatic relationship shifts.
@@ -358,11 +358,11 @@ export default function PathForwardAssessment() {
                   ) : (
                     <>
                       <div className="flex items-center gap-2 mb-3">
-                        <Target className="w-5 h-5 text-[#D69E2E]" />
+                        <Target className="w-5 h-5 text-[#c09050]" />
                         <h4 className="font-bold text-black font-['Montserrat']">Transformational Coaching</h4>
                       </div>
                       <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-['Plus_Jakarta_Sans']">
-                        You are likely in a season of <span className="font-bold text-[#D69E2E]">Expansion</span>. 
+                        You are likely in a season of <span className="font-bold text-[#c09050]">Expansion</span>. 
                         Coaching is a future-focused, proactive partnership designed for those ready to move 
                         from "functioning" to "flourishing." It focuses on the "how" of manifesting your 
                         evolved self and navigating life changes with grit and grace.
@@ -372,9 +372,9 @@ export default function PathForwardAssessment() {
                 </div>
 
                 {/* The Synergy Note */}
-                <div className="mb-8 p-4 rounded-xl bg-[#6B46C1]/5 border border-[#6B46C1]/10 text-center">
+                <div className="mb-8 p-4 rounded-xl bg-[#c09050]/5 border border-[#c09050]/10 text-center">
                   <p className="text-xs sm:text-sm text-gray-600 font-['Plus_Jakarta_Sans']">
-                    <span className="font-bold text-[#6B46C1]">The Synergy:</span> These paths are often sequential. 
+                    <span className="font-bold text-[#c09050]">The Synergy:</span> These paths are often sequential. 
                     Many find it beneficial to begin with therapy to shore up their emotional ground, 
                     then transition into coaching once they feel stable enough to build their "skyscraper."
                   </p>
@@ -385,14 +385,14 @@ export default function PathForwardAssessment() {
                   <a
                     href="https://calendly.com/manifestcoachingllc"
                     target="_blank"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black border-2 border-[#c09050] text-white font-bold transition-all duration-500 hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
                   >
                     <Calendar className="w-4 h-4" />
                     Book Free Consultation
                   </a>
                   <button
                     onClick={resetAssessment}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-bold hover:border-[#6B46C1] hover:text-[#6B46C1] transition-all duration-300 font-['Montserrat']"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-bold hover:border-[#c09050] hover:text-[#c09050] transition-all duration-300 font-['Montserrat']"
                   >
                     <ArrowRight className="w-4 h-4" />
                     Take Assessment Again
@@ -411,17 +411,17 @@ export default function PathForwardAssessment() {
           className="mt-12 md:mt-8 flex flex-wrap items-center justify-center gap-4 text-center"
         >
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Shield className="w-4 h-4 text-[#6B46C1]" />
+            <Shield className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">Evidence-Based Approaches</span>
           </div>
           <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Compass className="w-4 h-4 text-[#6B46C1]" />
+            <Compass className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">26+ Years Experience</span>
           </div>
           <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Flower2 className="w-4 h-4 text-[#6B46C1]" />
+            <Flower2 className="w-4 h-4 text-[#c09050]" />
             <span className="font-['Plus_Jakarta_Sans']">Client-Centered Care</span>
           </div>
         </motion.div>

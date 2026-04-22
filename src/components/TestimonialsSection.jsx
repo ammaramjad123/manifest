@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #6B46C1 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #c09050 0.5px, transparent 0.5px)`,
           backgroundSize: '30px 30px'
         }} />
       </div>
@@ -115,9 +115,9 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6"
         >
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#6B46C1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#c09050]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Testimonials
           </span>
         </motion.div>
@@ -129,7 +129,7 @@ export default function TestimonialsSection() {
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-black mb-4"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          What <span className="text-[#6B46C1]">Clients Say</span>
+          What <span className="text-[#c09050]">Clients Say</span>
         </motion.h2>
 
         <motion.p
@@ -159,13 +159,13 @@ export default function TestimonialsSection() {
               <div className="relative bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 h-full flex flex-col">
                 {/* Quote Icon */}
                 <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Quote size={40} className="text-[#6B46C1]" />
+                  <Quote size={40} className="text-[#c09050]" />
                 </div>
 
                 {/* Rating Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={18} className="fill-[#D69E2E] text-[#D69E2E]" />
+                    <Star key={i} size={18} className="fill-[#c09050] text-[#c09050]" />
                   ))}
                 </div>
 
@@ -179,7 +179,7 @@ export default function TestimonialsSection() {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-[#6B46C1]/30"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-[#c09050]/30"
                   />
                   <div>
                     <h4 className="text-black font-bold font-['Montserrat'] text-base md:text-lg">
@@ -188,7 +188,7 @@ export default function TestimonialsSection() {
                     <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans']">
                       {testimonial.title}
                     </p>
-                    <p className="text-[#6B46C1]/70 text-xs font-['Plus_Jakarta_Sans'] mt-0.5">
+                    <p className="text-[#c09050]/70 text-xs font-['Plus_Jakarta_Sans'] mt-0.5">
                       {testimonial.location} • {testimonial.service}
                     </p>
                   </div>
@@ -204,19 +204,19 @@ export default function TestimonialsSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#6B46C1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>100+</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#c09050]" style={{ fontFamily: "'Montserrat', sans-serif" }}>100+</div>
               <div className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">Clients Served</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#6B46C1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>4.9 ★</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#c09050]" style={{ fontFamily: "'Montserrat', sans-serif" }}>4.9 ★</div>
               <div className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">Average Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#6B46C1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>98%</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#c09050]" style={{ fontFamily: "'Montserrat', sans-serif" }}>98%</div>
               <div className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">Would Recommend</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#6B46C1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>26+</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#c09050]" style={{ fontFamily: "'Montserrat', sans-serif" }}>26+</div>
               <div className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">Years Experience</div>
             </div>
           </div>

@@ -236,10 +236,10 @@ export default function Specialties() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6"
           >
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#6B46C1] font-['Montserrat']">
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#c09050] font-['Montserrat']">
               Clinical Specialties
             </span>
           </motion.div>
@@ -249,7 +249,7 @@ export default function Specialties() {
             className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-6 font-['Montserrat']"
           >
             Areas of{" "}
-            <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
               Expertise
             </span>
           </motion.h2>
@@ -345,7 +345,7 @@ export default function Specialties() {
         >
           <Link
             to="/specialties"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold text-base md:text-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black border-2 border-[#c09050] text-white font-bold text-base md:text-lg transition-all duration-500 hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
           >
             <span>View All Specialties</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />

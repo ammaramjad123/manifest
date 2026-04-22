@@ -55,15 +55,6 @@ export default function HeroSection() {
     },
   };
 
-  const floatingAnimation = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
   const stats = [
     { 
       label: "Years Experience", 
@@ -94,7 +85,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#0a0a1a] pt-7 sm:pt-50">
       
-      {/* 4K Therapy Background Image */}
+      {/* 4K Therapy Background Image with DARK Overlay */}
       <div className="absolute inset-0 z-0">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
@@ -107,11 +98,11 @@ export default function HeroSection() {
             alt="Calm peaceful therapy office with natural light"
             className="w-full h-full object-cover"
           />
-          {/* MUCH DARKER Overlay Layers for Better Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/98 via-[#6B46C1]/30 to-black/98" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/90" />
+          {/* DARK Overlay Layers for Better Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-[#c09050]/20 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/85" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_98%)]" />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-black/60" />
         </motion.div>
       </div>
 
@@ -125,7 +116,7 @@ export default function HeroSection() {
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#6B46C1]/40 rounded-full"
+            className="absolute w-1 h-1 bg-[#c09050]/40 rounded-full"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -151,7 +142,7 @@ export default function HeroSection() {
         {[...Array(25)].map((_, i) => (
           <motion.div
             key={`medium-${i}`}
-            className="absolute w-1.5 h-1.5 bg-[#8B5CF6]/30 rounded-full"
+            className="absolute w-1.5 h-1.5 bg-[#d4a84b]/30 rounded-full"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -177,7 +168,7 @@ export default function HeroSection() {
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={`large-${i}`}
-            className="absolute w-2 h-2 bg-[#6B46C1]/20 rounded-full"
+            className="absolute w-2 h-2 bg-[#c09050]/20 rounded-full"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -201,17 +192,17 @@ export default function HeroSection() {
       {/* Floating Orbs */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         <motion.div 
-          className="absolute top-20 left-10 w-64 h-64 bg-[#6B46C1]/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-64 h-64 bg-[#c09050]/15 rounded-full blur-3xl"
           animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-[#d4a84b]/15 rounded-full blur-3xl"
           animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6B46C1]/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#c09050]/8 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -229,41 +220,41 @@ export default function HeroSection() {
           {/* Premium Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/30 backdrop-blur-2xl border border-[#6B46C1]/60 mb-6 md:mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/20 backdrop-blur-2xl border border-[#c09050]/40 mb-6 md:mb-8"
           >
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-white font-['Montserrat']">
               Compassionate Therapy Services
             </span>
           </motion.div>
 
-        {/* Main Heading */}
-<motion.h1
-  variants={itemVariants}
-  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px] font-black text-white tracking-tighter leading-[1.1] md:leading-[1.05] mb-6 font-['Montserrat']"
->
-  Your Journey to
-  <br />
-  <span className="relative inline-block">
-    <span className="bg-gradient-to-r from-[#8B5CF6] via-[#A78BFA] to-[#8B5CF6] bg-clip-text text-transparent pr-4 font-black drop-shadow-lg">
-      Healing & Peace
-    </span>
-  </span>
-  <br />
-  <span className="text-white/90">Starts Here</span>
-</motion.h1>
+          {/* Main Heading */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px] font-black text-white tracking-tighter leading-[1.1] md:leading-[1.05] mb-6 font-['Montserrat']"
+          >
+            Your Journey to
+            <br />
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent pr-4 font-black">
+                Healing & Peace
+              </span>
+            </span>
+            <br />
+            <span className="text-white/90">Starts Here</span>
+          </motion.h1>
 
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg md:text-xl font-medium leading-relaxed mb-8 px-4 font-['Plus_Jakarta_Sans']"
+            className="text-white/80 max-w-3xl mx-auto text-base sm:text-lg md:text-xl font-medium leading-relaxed mb-8 px-4 font-['Plus_Jakarta_Sans']"
           >
             With over 26 years of experience, I provide compassionate therapy, 
             life coaching, and professional training to help you navigate life's 
             challenges and discover your path to peace.
           </motion.p>
 
-         {/* CTA Buttons */}
+          {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
@@ -275,12 +266,12 @@ export default function HeroSection() {
             >
               <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span>Schedule Free Consultation</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#6B46C1]/0 via-[#6B46C1]/20 to-[#6B46C1]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#c09050]/0 via-[#c09050]/20 to-[#c09050]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </a>
             <div className="inline-block transition-transform duration-300 hover:-translate-y-1">
               <a href="#services">
-                <button className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold text-base sm:text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden font-['Montserrat'] cursor-pointer">
-                  <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#4C1D95] to-[#6B46C1] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <button className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#c09050] to-[#d4a84b] text-white font-bold text-base sm:text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden font-['Montserrat'] cursor-pointer">
+                  <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#b07d40] to-[#c09050] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Heart className="w-5 h-5 relative z-10" />
                   <span className="relative z-10">Explore Services</span>
                   <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
@@ -289,53 +280,47 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-       {/* Premium Trust Strip */}
-<motion.div
-  variants={itemVariants}
-  className="relative z-30 mt-20 pt-1 pb-10 hidden md:block"
->
-  <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14">
-    {/* NYU Graduate */}
-    <div className="flex items-center gap-3 group cursor-pointer">
-      <Award className="w-6 h-6 text-white/60 group-hover:text-[#6B46C1] transition duration-300" />
-      <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/70 group-hover:text-white transition duration-300 font-['Montserrat']">
-        NYU GRADUATE
-      </span>
-    </div>
+          {/* Premium Trust Strip */}
+          <motion.div
+            variants={itemVariants}
+            className="relative z-30 mt-20 pt-1 pb-10"
+          >
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14">
+              {/* NYU Graduate */}
+              <div className="flex items-center gap-3 group cursor-pointer">
+                <Award className="w-6 h-6 text-white/50 group-hover:text-[#c09050] transition duration-300" />
+                <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/60 group-hover:text-white transition duration-300 font-['Montserrat']">
+                  NYU GRADUATE
+                </span>
+              </div>
 
-    {/* 26+ Years */}
-    <div className="flex items-center gap-3 group cursor-pointer">
-      <Brain className="w-6 h-6 text-white/60 group-hover:text-[#6B46C1] transition duration-300" />
-      <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/70 group-hover:text-white transition duration-300 font-['Montserrat']">
-        26+ YEARS
-      </span>
-    </div>
+              {/* 26+ Years */}
+              <div className="flex items-center gap-3 group cursor-pointer">
+                <Brain className="w-6 h-6 text-white/50 group-hover:text-[#c09050] transition duration-300" />
+                <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/60 group-hover:text-white transition duration-300 font-['Montserrat']">
+                  26+ YEARS
+                </span>
+              </div>
 
-    {/* Evidence Based */}
-    <div className="flex items-center gap-3 group cursor-pointer">
-      <CheckCircle className="w-6 h-6 text-white/60 group-hover:text-[#6B46C1] transition duration-300" />
-      <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/70 group-hover:text-white transition duration-300 font-['Montserrat']">
-        EVIDENCE-BASED
-      </span>
-    </div>
+              {/* Evidence Based */}
+              <div className="flex items-center gap-3 group cursor-pointer">
+                <CheckCircle className="w-6 h-6 text-white/50 group-hover:text-[#c09050] transition duration-300" />
+                <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/60 group-hover:text-white transition duration-300 font-['Montserrat']">
+                  EVIDENCE-BASED
+                </span>
+              </div>
 
-    {/* Trauma Informed */}
-    <div className="flex items-center gap-3 group cursor-pointer">
-      <Heart className="w-6 h-6 text-white/60 group-hover:text-[#6B46C1] transition duration-300" />
-      <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/70 group-hover:text-white transition duration-300 font-['Montserrat']">
-        TRAUMA-INFORMED
-      </span>
-    </div>
-  </div>
-</motion.div>
-
-     
-
-          
+              {/* Trauma Informed */}
+              <div className="flex items-center gap-3 group cursor-pointer">
+                <Heart className="w-6 h-6 text-white/50 group-hover:text-[#c09050] transition duration-300" />
+                <span className="text-xl md:text-2xl font-black italic tracking-wide text-white/60 group-hover:text-white transition duration-300 font-['Montserrat']">
+                  TRAUMA-INFORMED
+                </span>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-
-      
 
       {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a1a] to-transparent z-10" />
@@ -388,7 +373,7 @@ function StatItem({ label, value, icon, description }) {
       }}
       className="flex flex-col items-center text-center gap-2 group cursor-pointer"
     >
-      <div className="w-12 h-12 rounded-full bg-[#6B46C1]/30 backdrop-blur-sm flex items-center justify-center text-[#6B46C1] group-hover:bg-[#6B46C1]/50 transition-all duration-300 group-hover:scale-110">
+      <div className="w-12 h-12 rounded-full bg-[#c09050]/20 backdrop-blur-sm flex items-center justify-center text-[#c09050] group-hover:bg-[#c09050]/40 transition-all duration-300 group-hover:scale-110">
         {icon}
       </div>
       <div className="flex flex-col gap-0.5">

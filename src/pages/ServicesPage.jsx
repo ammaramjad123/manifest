@@ -38,85 +38,79 @@ export default function ServicesPage() {
     }
   }, [controls, inView]);
 
-  // Auto-rotate through services every 5 seconds
+  
+  const services = [
+    {
+      id: "process",
+      title: "The Process",
+      subtitle: "Clinical Therapy",
+      icon: <Heart size={28}  />,
+      gradient: "from-[#c09050] to-[#d4a84b]",
+      bgGradient: "bg-gradient-to-br from-[#c09050]/10 to-[#d4a84b]/10",
+      borderColor: "border-[#c09050]/30",
+      textColor: "text-[#c09050]",
+      iconBg: "bg-[#c09050]/15",
+      iconColor: "text-[#c09050]",
+      description: "Deep healing for trauma, distress, and emotional regulation.",
+      longDescription: "I provide a safe, compassionate space for you to heal from past wounds, process complex emotions, and build emotional regulation skills.",
+      modalities: ["ART", "DBT", "ACT"],
+      features: ["Individual therapy ages 17+", "Virtual HIPAA-compliant sessions", "Flexible scheduling", "Insurance accepted"],
+      locations: ["NY (#098940)", "NJ (#44SL06739500)", "RI (#ISW04317)"],
+      ctaText: "Begin Your Healing Journey",
+      ctaLink: "https://headway.co",
+      ctaIcon: <Heart size={18} />
+    },
+    {
+      id: "pivot",
+      title: "The Pivot",
+      subtitle: "Transformational Coaching",
+      icon: <Brain size={28} />,
+      gradient: "from-[#c09050] to-[#d4a84b]",
+      bgGradient: "bg-gradient-to-br from-[#c09050]/10 to-[#d4a84b]/10",
+      borderColor: "border-[#c09050]/30",
+      textColor: "text-[#c09050]",
+      iconBg: "bg-[#c09050]/15",
+      iconColor: "text-[#c09050]",
+      description: "Strategic guidance for life shifts and personal growth.",
+      longDescription: "The MANIFEST Method helps you bridge the gap between where you are and where you want to be.",
+      modalities: ["MANIFEST Framework", "SĀF-T", "Goal-Accelerator"],
+      features: ["Nationwide via telehealth", "Single or package bundles", "Pay-to-schedule via Calendly", "Workbooks included"],
+      locations: ["Available Nationwide"],
+      ctaText: "Start Your Expansion Journey",
+      ctaLink: "https://calendly.com/manifestcoachingllc",
+      ctaIcon: <Brain size={18} />
+    },
+    {
+      id: "partnership",
+      title: "The Partnership",
+      subtitle: "Training & Education",
+      icon: <BookOpen size={28} />,
+      gradient: "from-[#c09050] to-[#d4a84b]",
+      bgGradient: "bg-gradient-to-br from-[#c09050]/10 to-[#d4a84b]/10",
+      borderColor: "border-[#c09050]/30",
+      textColor: "text-[#c09050]",
+      iconBg: "bg-[#c09050]/15",
+      iconColor: "text-[#c09050]",
+      description: "Evidence-based training for organizations and professionals.",
+      longDescription: "SĀF-T and Clinical ART trainings facilitated through RCRR for mental health professionals.",
+      modalities: ["ART Basic Training", "ART Advanced Training", "SĀF-T Certification"],
+      features: ["CE credits available", "In-person & virtual options", "Group rates available", "Facilitated through RCRR"],
+      locations: ["In-person (NY, GA) + Virtual Nationwide"],
+      ctaText: "Inquire About Training",
+      ctaLink: "#contact",
+      ctaIcon: <BookOpen size={18} />
+    }
+  ];
+  
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveService((prev) => (prev + 1) % 3);
-    }, 20000);
+      setActiveService((prev) => (prev + 1) % services.length);
+    }, 10000);
+  
     return () => clearInterval(interval);
-  }, []);
-
- 
-
- 
-
-// Add this BEFORE the return statement (around line 30-40)
-
-const services = [
-  {
-    id: "process",
-    title: "The Process",
-    subtitle: "Clinical Therapy",
-    icon: <Heart size={28}  />,
-    gradient: "from-[#6B46C1] to-[#8B5CF6]",
-    bgGradient: "bg-gradient-to-br from-[#6B46C1]/10 to-[#8B5CF6]/10",
-    borderColor: "border-[#6B46C1]/30",
-    textColor: "text-[#6B46C1]",
-    iconBg: "bg-[#6B46C1]/15",
-    iconColor: "text-[#6B46C1]",
-    description: "Deep healing for trauma, distress, and emotional regulation.",
-    longDescription: "I provide a safe, compassionate space for you to heal from past wounds, process complex emotions, and build emotional regulation skills.",
-    modalities: ["ART", "DBT", "ACT"],
-    features: ["Individual therapy ages 17+", "Virtual HIPAA-compliant sessions", "Flexible scheduling", "Insurance accepted"],
-    locations: ["NY (#098940)", "NJ (#44SL06739500)", "RI (#ISW04317)"],
-    ctaText: "Begin Your Healing Journey",
-    ctaLink: "https://headway.co",
-    ctaIcon: <Heart size={18} />
-  },
-  {
-    id: "pivot",
-    title: "The Pivot",
-    subtitle: "Transformational Coaching",
-    icon: <Brain size={28} />,
-    gradient: "from-[#6B46C1] to-[#8B5CF6]",
-    bgGradient: "bg-gradient-to-br from-[#6B46C1]/10 to-[#8B5CF6]/10",
-    borderColor: "border-[#6B46C1]/30",
-    textColor: "text-[#6B46C1]",
-    iconBg: "bg-[#6B46C1]/15",
-    iconColor: "text-[#6B46C1]",
-    description: "Strategic guidance for life shifts and personal growth.",
-    longDescription: "The MANIFEST Method helps you bridge the gap between where you are and where you want to be.",
-    modalities: ["MANIFEST Framework", "SĀF-T", "Goal-Accelerator"],
-    features: ["Nationwide via telehealth", "Single or package bundles", "Pay-to-schedule via Calendly", "Workbooks included"],
-    locations: ["Available Nationwide"],
-    ctaText: "Start Your Expansion Journey",
-    ctaLink: "https://calendly.com/manifestcoachingllc",
-    ctaIcon: <Brain size={18} />
-  },
-  {
-    id: "partnership",
-    title: "The Partnership",
-    subtitle: "Training & Education",
-    icon: <BookOpen size={28} />,
-    gradient: "from-[#6B46C1] to-[#8B5CF6]",
-    bgGradient: "bg-gradient-to-br from-[#6B46C1]/10 to-[#8B5CF6]/10",
-    borderColor: "border-[#6B46C1]/30",
-    textColor: "text-[#6B46C1]",
-    iconBg: "bg-[#6B46C1]/15",
-    iconColor: "text-[#6B46C1]",
-    description: "Evidence-based training for organizations and professionals.",
-    longDescription: "SĀF-T and Clinical ART trainings facilitated through RCRR for mental health professionals.",
-    modalities: ["ART Basic Training", "ART Advanced Training", "SĀF-T Certification"],
-    features: ["CE credits available", "In-person & virtual options", "Group rates available", "Facilitated through RCRR"],
-    locations: ["In-person (NY, GA) + Virtual Nationwide"],
-    ctaText: "Inquire About Training",
-    ctaLink: "#contact",
-    ctaIcon: <BookOpen size={18} />
-  }
-];
-
-const activeData = services[activeService];
-
+  }, [services.length]);
+  const activeData = services[activeService];
+  
   return (
     <div className="bg-white overflow-hidden">
       
@@ -125,14 +119,14 @@ const activeData = services[activeService];
 
 
           {/* ========== SERVICES & PRICING - COSMIC EXPERIENCE ========== */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-[#6B46C1]/3 to-white overflow-hidden relative">
+      <section className="py-20 md:py-28 bg-white overflow-hidden relative">
         
         {/* Animated Background Particles */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-[#6B46C1]/20 rounded-full"
+              className="absolute w-1 h-1 bg-[#c09050]/20 rounded-full"
               initial={{
                 x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
                 y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -160,10 +154,10 @@ const activeData = services[activeService];
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-4"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-4"
             >
-              <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#6B46C1]">Choose Your Path</span>
+              <Sparkles className="w-4 h-4 text-[#c09050]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#c09050]">Choose Your Path</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -172,7 +166,7 @@ const activeData = services[activeService];
               className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']"
             >
               Invest in Your{" "}
-              <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
                 Transformation
               </span>
             </motion.h2>
@@ -180,7 +174,7 @@ const activeData = services[activeService];
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: "4rem" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-0.5 bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] mx-auto rounded-full mb-6"
+              className="h-0.5 bg-gradient-to-r from-[#c09050] to-[#d4a84b] mx-auto rounded-full mb-6"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -204,26 +198,26 @@ const activeData = services[activeService];
               className="group relative"
             >
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
-                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#6B46C1] to-[#8B5CF6] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
+                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#c09050] to-[#d4a84b] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
                   $250 / session
                 </div>
                 <div className="p-6 pt-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6B46C1] to-[#8B5CF6] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c09050] to-[#d4a84b] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
                     <Brain className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-black text-black mb-2 font-['Montserrat']">ART Therapy</h3>
-                  <p className="text-[#6B46C1] font-semibold text-sm mb-3">Accelerated Resolution Therapy</p>
+                  <p className="text-[#c09050] font-semibold text-sm mb-3">Accelerated Resolution Therapy</p>
                   <p className="text-gray-600 text-base leading-relaxed mb-4 font-['Plus_Jakarta_Sans']">
                     50-70 minute session. Evidence-based treatment for trauma, anxiety, depression, and phobias.
                   </p>
                   <div className="flex items-center gap-2 mb-4">
-                    <Clock className="w-4 h-4 text-[#6B46C1]" />
+                    <Clock className="w-4 h-4 text-[#c09050]" />
                     <span className="text-xs font-bold text-gray-500">50-70 min session</span>
                   </div>
                   <a
                     href="https://calendly.com/manifestcoachingllc/manifest-coaching-llc-art?back=1&month=2026-04"
                     target="_blank"
-                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
+                    className="block w-full text-center py-3 rounded-xl bg-black border-2 border-[#c09050] text-white font-bold hover:bg-[#c09050] hover:border-[#c09050] transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
                   >
                     Book Your Healing Time →
                   </a>
@@ -240,26 +234,26 @@ const activeData = services[activeService];
               className="group relative"
             >
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
-                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#6B46C1] to-[#8B5CF6] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
+                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#c09050] to-[#d4a84b] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
                   Deposit Required
                 </div>
                 <div className="p-6 pt-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6B46C1] to-[#8B5CF6] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c09050] to-[#d4a84b] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-black text-black mb-2 font-['Montserrat']">Immigration Evaluation</h3>
-                  <p className="text-[#6B46C1] font-semibold text-sm mb-3">High-Stakes Clinical Assessment</p>
+                  <p className="text-[#c09050] font-semibold text-sm mb-3">High-Stakes Clinical Assessment</p>
                   <p className="text-gray-600 text-base leading-relaxed mb-4 font-['Plus_Jakarta_Sans']">
                     120-minute evaluation. Curating complex narratives for Asylum, Hardship, and VAWA cases.
                   </p>
                   <div className="flex items-center gap-2 mb-4">
-                    <Clock className="w-4 h-4 text-[#6B46C1]" />
+                    <Clock className="w-4 h-4 text-[#c09050]" />
                     <span className="text-xs font-bold text-gray-500">120 min session</span>
                   </div>
                   <a
                     href="https://calendly.com/manifestcoachingllc/immigration"
                     target="_blank"
-                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
+                    className="block w-full text-center py-3 rounded-xl bg-black border-2 border-[#c09050] text-white font-bold hover:bg-[#c09050] hover:border-[#c09050] transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
                   >
                     Book Your Evaluation →
                   </a>
@@ -276,26 +270,26 @@ const activeData = services[activeService];
               className="group relative"
             >
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
-                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#6B46C1] to-[#8B5CF6] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
+                <div className="absolute top-4 right-0 bg-gradient-to-l from-[#c09050] to-[#d4a84b] text-white px-4 py-1 rounded-l-full text-sm font-bold z-10">
                   $200 / session
                 </div>
                 <div className="p-6 pt-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6B46C1] to-[#8B5CF6] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c09050] to-[#d4a84b] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-500">
                     <Target className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-black text-black mb-2 font-['Montserrat']">Transformational Coaching</h3>
-                  <p className="text-[#6B46C1] font-semibold text-sm mb-3">MANIFEST Method</p>
+                  <p className="text-[#c09050] font-semibold text-sm mb-3">MANIFEST Method</p>
                   <p className="text-gray-600 text-base leading-relaxed mb-4 font-['Plus_Jakarta_Sans']">
                     55-minute session. Strategic guidance for life shifts, career evolution, and personal growth.
                   </p>
                   <div className="flex items-center gap-2 mb-4">
-                    <Clock className="w-4 h-4 text-[#6B46C1]" />
+                    <Clock className="w-4 h-4 text-[#c09050]" />
                     <span className="text-xs font-bold text-gray-500">55 min session</span>
                   </div>
                   <a
                     href="https://calendly.com/manifestcoachingllc/coach?back=1&month=2026-04"
                     target="_blank"
-                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
+                    className="block w-full text-center py-3 rounded-xl bg-black border-2 border-[#c09050] text-white font-bold hover:bg-[#c09050] hover:border-[#c09050] transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
                   >
                     Book Your Coaching →
                   </a>
@@ -330,12 +324,12 @@ const activeData = services[activeService];
                   </div>
                   <div className="flex items-center gap-2 mb-4">
                     <AlertCircle className="w-4 h-4 text-amber-500" />
-                    <span className="text-xs font-bold  text-gray-500">$100 late cancellation fee</span>
+                    <span className="text-xs font-bold text-gray-500">$100 late cancellation fee</span>
                   </div>
                   <a
                     href="https://calendly.com/manifestcoachingllc/alma?back=1&month=2026-04"
                     target="_blank"
-                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#10B981] to-[#34D399] text-white font-bold hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
+                    className="block w-full text-center py-3 rounded-xl bg-black border-2 border-[#10B981] text-white font-bold hover:bg-[#10B981] hover:border-[#10B981] transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
                   >
                     Book ALMA Follow-up →
                   </a>
@@ -382,7 +376,7 @@ const activeData = services[activeService];
                   <a
                     href="https://calendly.com/manifestcoachingllc/headway?back=1&month=2026-04"
                     target="_blank"
-                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white font-bold hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
+                    className="block w-full text-center py-3 rounded-xl bg-black border-2 border-[#3B82F6] text-white font-bold hover:bg-[#3B82F6] hover:border-[#3B82F6] transition-all duration-300 group-hover:-translate-y-0.5 font-['Montserrat'] text-base"
                   >
                     Book Headway Follow-up →
                   </a>
@@ -406,7 +400,7 @@ const activeData = services[activeService];
             className="mt-12 text-center"
           >
             <div className="inline-flex flex-wrap items-center justify-center gap-4 bg-gray-50 rounded-2xl px-6 py-4 border border-gray-100">
-              <Shield className="w-5 h-5 text-[#6B46C1]" />
+              <Shield className="w-5 h-5 text-[#c09050]" />
               <p className="text-gray-600 text-sm font-['Plus_Jakarta_Sans']">
                 Insurance accepted for therapy through <span className="font-semibold text-[#10B981]">ALMA</span> and <span className="font-semibold text-[#3B82F6]">Headway</span>
               </p>
@@ -428,7 +422,7 @@ const activeData = services[activeService];
             <a
               href="https://calendly.com/manifestcoachingllc"
               target="_blank"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white border-2 border-[#6B46C1] text-[#6B46C1] font-bold hover:bg-[#6B46C1] hover:text-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-black border-2 border-[#c09050] text-white font-bold hover:bg-[#c09050] hover:border-[#c09050] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
             >
               <Calendar className="w-5 h-5" />
               Not sure? Book a Free 15-min Consultation
@@ -444,13 +438,13 @@ const activeData = services[activeService];
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/15 border border-[#6B46C1]/30 mb-4">
-              <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#6B46C1]">Choose Your Path</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/15 border border-[#c09050]/30 mb-4">
+              <Sparkles className="w-4 h-4 text-[#c09050]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#c09050]">Choose Your Path</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']">
               Three Pathways to{" "}
-              <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
                 Peace
               </span>
             </h2>
@@ -459,48 +453,62 @@ const activeData = services[activeService];
             </p>
           </div>
           
-          {/* Service Selector - Responsive Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-12 md:mb-16">
-            {services.map((service, idx) => (
-              <motion.button
-                key={service.id}
-                onClick={() => setActiveService(idx)}
-                onMouseEnter={() => setHoveredCard(idx)}
-                onMouseLeave={() => setHoveredCard(null)}
-                className={`relative p-5 md:p-6 rounded-2xl transition-all duration-500 text-left group w-full ${
-                  activeService === idx
-                    ? `bg-gradient-to-br ${service.gradient} shadow-2xl scale-[1.02]`
-                    : `bg-white border-2 ${service.borderColor} hover:shadow-lg`
-                }`}
-                whileHover={{ scale: activeService === idx ? 1.02 : 1.01 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl mb-3 md:mb-4 flex items-center justify-center transition-all duration-500 ${
-                  activeService === idx
-                    ? "bg-white/20 text-white"
-                    : `${service.iconBg} ${service.iconColor}`
-                }`}>
-                  {service.icon}
-                </div>
-                <h3 className={`text-xl md:text-2xl font-black mb-1 font-['Montserrat'] ${
-                  activeService === idx ? "text-white" : "text-black"
-                }`}>
-                  {service.title}
-                </h3>
-                <p className={`text-xs md:text-sm font-['Plus_Jakarta_Sans'] ${
-                  activeService === idx ? "text-white/80" : "text-gray-500"
-                }`}>
-                  {service.subtitle}
-                </p>
-                {activeService === idx && (
-                  <motion.div 
-                    layoutId="activeIndicator"
-                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-10 h-1 bg-white rounded-full"
-                  />
-                )}
-              </motion.button>
-            ))}
-          </div>
+         <div className="flex justify-center mb-16">
+  <div className="relative w-[340px] sm:w-[420px] md:w-[500px] aspect-square">
+
+    <svg viewBox="0 0 500 500" className="w-full h-full">
+      {services.map((service, idx) => {
+        const radiuses = [180, 140, 100];
+        const strokeWidth = 20;
+
+        return (
+          <motion.g
+            key={service.id}
+            onClick={() => setActiveService(idx)}
+            className="cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.path
+              d={`
+                M 250 ${250 - radiuses[idx]}
+                A ${radiuses[idx]} ${radiuses[idx]} 0 1 1 249 ${250 - radiuses[idx]}
+              `}
+              fill="none"
+              stroke={activeService === idx ? "#c09050" : "#d1d5db"}
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+              initial={false}
+              animate={{
+                stroke: activeService === idx ? "#c09050" : "#d1d5db"
+              }}
+              transition={{ duration: 0.4 }}
+            />
+
+            <path
+              d={`
+                M 250 ${250 - radiuses[idx]}
+                A ${radiuses[idx]} ${radiuses[idx]} 0 1 1 249 ${250 - radiuses[idx]}
+              `}
+              fill="none"
+              stroke="transparent"
+              strokeWidth={40}
+            />
+          </motion.g>
+        );
+      })}
+    </svg>
+
+    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+      <h3 className="text-xl md:text-2xl font-black text-black font-['Montserrat']">
+        {services[activeService].title}
+      </h3>
+      <p className="text-gray-500 text-sm font-['Plus_Jakarta_Sans']">
+        {services[activeService].subtitle}
+      </p>
+    </div>
+
+  </div>
+</div>
 
           {/* Active Service Detail - Dynamic Content */}
           <motion.div
@@ -553,7 +561,7 @@ const activeData = services[activeService];
                   <a
                     href={activeData.ctaLink}
                     target={activeData.id !== "partnership" ? "_blank" : "_self"}
-                    className={`group inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-gradient-to-r ${activeData.gradient} text-white font-bold text-sm md:text-base transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat'] w-full sm:w-auto justify-center`}
+                    className={`group inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-black border-2 border-[#c09050] text-white font-bold text-sm md:text-base transition-all duration-500 hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-2xl hover:-translate-y-1 font-['Montserrat'] w-full sm:w-auto justify-center`}
                   >
                     {activeData.ctaIcon}
                     <span className="truncate">{activeData.ctaText}</span>
@@ -565,13 +573,13 @@ const activeData = services[activeService];
                 <div className="lg:w-[340px] xl:w-[380px] flex-shrink-0">
                   <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-6 border border-gray-200 shadow-lg">
                     <h3 className="text-lg md:text-xl font-black text-black mb-4 md:mb-5 font-['Montserrat'] flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-[#6B46C1]" />
+                      <Zap className="w-5 h-5 text-[#c09050]" />
                       What to Expect
                     </h3>
                     <ul className="space-y-3 md:space-y-4 mb-5 md:mb-6">
                       {activeData.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 text-[#6B46C1] mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#c09050] mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700 text-sm md:text-base font-['Plus_Jakarta_Sans'] leading-relaxed">{feature}</span>
                         </li>
                       ))}
@@ -600,14 +608,14 @@ const activeData = services[activeService];
           
           {/* Section Header - Improved */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-4">
-              <Gem className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#6B46C1]">The Methodology</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-4">
+              <Gem className="w-4 h-4 text-[#c09050]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#c09050]">The Methodology</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']">
-              The <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">MANIFEST</span> Method
+              The <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">MANIFEST</span> Method
             </h2>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] mx-auto rounded-full mb-5" />
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[#c09050] to-[#d4a84b] mx-auto rounded-full mb-5" />
             <p className="text-gray-500 text-base md:text-lg font-['Plus_Jakarta_Sans'] max-w-2xl mx-auto">
               A proprietary framework designed to bridge clinical excellence with intentional living
             </p>
@@ -631,15 +639,15 @@ const activeData = services[activeService];
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05, duration: 0.4 }}
                 whileHover={{ y: -5 }}
-                className="group bg-white rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#6B46C1]/20 flex flex-col h-full"
+                className="group bg-white rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#c09050]/20 flex flex-col h-full"
               >
                 {/* Letter Circle */}
-                <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#6B46C1] to-[#8B5CF6] flex items-center justify-center text-white font-black text-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#c09050] to-[#d4a84b] flex items-center justify-center text-white font-black text-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
                   {item.letter}
                 </div>
                 
                 {/* Word */}
-                <h3 className="font-black text-black text-base md:text-lg mb-1 font-['Montserrat'] group-hover:text-[#6B46C1] transition-colors">
+                <h3 className="font-black text-black text-base md:text-lg mb-1 font-['Montserrat'] group-hover:text-[#c09050] transition-colors">
                   {item.word}
                 </h3>
                 
@@ -652,7 +660,7 @@ const activeData = services[activeService];
                 
                 {/* Hover Text - Fixed position at bottom */}
                 <div className="h-8 mt-auto">
-                  <p className="text-[#6B46C1] text-[10px] md:text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-[#c09050] text-[10px] md:text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {item.hoverText}
                   </p>
                 </div>
@@ -669,7 +677,7 @@ const activeData = services[activeService];
           >
             <Link
               to="/manifest-method"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold text-sm md:text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#6B46C1]/20 hover:-translate-y-0.5 font-['Montserrat']"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black border-2 border-[#c09050] text-white font-bold text-sm md:text-base transition-all duration-300 hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-xl hover:-translate-y-0.5 font-['Montserrat']"
             >
               <span>Discover the MANIFEST Method</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -687,12 +695,12 @@ const activeData = services[activeService];
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-4">
-              <Shield className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#6B46C1]">The Curator's Boundary</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-4">
+              <Shield className="w-4 h-4 text-[#c09050]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#c09050]">The Curator's Boundary</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-black mb-4 font-['Montserrat']">
-              The <span className="text-[#6B46C1]">Two Hats</span>
+              The <span className="text-[#c09050]">Two Hats</span>
             </h2>
             <p className="text-gray-600 font-['Plus_Jakarta_Sans']">
               I never wear both hats at the same time. During our Alignment Call, we decide which hat honors your current journey best.
@@ -702,13 +710,13 @@ const activeData = services[activeService];
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="relative p-8 rounded-2xl bg-gradient-to-br from-[#6B46C1]/5 to-[#8B5CF6]/5 border border-[#6B46C1]/20 text-center"
+              className="relative p-8 rounded-2xl bg-gradient-to-br from-[#c09050]/5 to-[#d4a84b]/5 border border-[#c09050]/20 text-center"
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#6B46C1]/20 flex items-center justify-center">
-                <Heart className="w-8 h-8 text-[#6B46C1]" />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#c09050]/20 flex items-center justify-center">
+                <Heart className="w-8 h-8 text-[#c09050]" />
               </div>
               <h3 className="text-2xl font-black text-black mb-2 font-['Montserrat']">Hat 1: Clinical Therapist</h3>
-              <p className="text-[#6B46C1] font-semibold mb-4">Licensed Healthcare Professional</p>
+              <p className="text-[#c09050] font-semibold mb-4">Licensed Healthcare Professional</p>
               <p className="text-gray-600 text-sm mb-4">Restricted to NY, NJ, and RI</p>
               <div className="flex flex-wrap justify-center gap-2">
                 <span className="px-2 py-1 bg-white rounded text-xs">NY (#098940)</span>
@@ -719,13 +727,13 @@ const activeData = services[activeService];
 
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="relative p-8 rounded-2xl bg-gradient-to-br from-[#7C3AED]/5 to-[#A78BFA]/5 border border-[#7C3AED]/20 text-center"
+              className="relative p-8 rounded-2xl bg-gradient-to-br from-[#c09050]/5 to-[#d4a84b]/5 border border-[#c09050]/20 text-center"
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#7C3AED]/20 flex items-center justify-center">
-                <Brain className="w-8 h-8 text-[#7C3AED]" />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#c09050]/20 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-[#c09050]" />
               </div>
               <h3 className="text-2xl font-black text-black mb-2 font-['Montserrat']">Hat 2: Consultative Coach</h3>
-              <p className="text-[#7C3AED] font-semibold mb-4">Strategic Partnership</p>
+              <p className="text-[#c09050] font-semibold mb-4">Strategic Partnership</p>
               <p className="text-gray-600 text-sm mb-4">Available Nationwide</p>
               <div className="flex flex-wrap justify-center gap-2">
                 <span className="px-2 py-1 bg-white rounded text-xs">All 50 States</span>
@@ -742,17 +750,17 @@ const activeData = services[activeService];
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-4">
-              <Users className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#6B46C1]">Who We Help</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-4">
+              <Users className="w-4 h-4 text-[#c09050]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#c09050]">Who We Help</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 font-['Montserrat']">
               Designed for{" "}
-              <span className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent">
                 Individual Evolution
               </span>
             </h2>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] mx-auto rounded-full mb-5" />
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[#c09050] to-[#d4a84b] mx-auto rounded-full mb-5" />
             <p className="text-gray-500 text-base md:text-lg font-['Plus_Jakarta_Sans']">
               Ages 17+ | Virtual Sessions Available Nationwide
             </p>
@@ -765,29 +773,29 @@ const activeData = services[activeService];
                 icon: <Target size={24} />, 
                 title: "High-Achievers & Students", 
                 desc: "Navigating career pivots or launching into adulthood",
-                color: "#6B46C1",
-                bgColor: "bg-[#6B46C1]/10"
+                color: "#c09050",
+                bgColor: "bg-[#c09050]/10"
               },
               { 
                 icon: <Compass size={24} />, 
                 title: "Individuals in Transition", 
                 desc: "Recalibrating identity during shifts in relationship, marriage, or parenthood",
-                color: "#7C3AED",
-                bgColor: "bg-[#7C3AED]/10"
+                color: "#d4a84b",
+                bgColor: "bg-[#d4a84b]/10"
               },
               { 
                 icon: <Shield size={24} />, 
                 title: "First Responders & Public Servants", 
                 desc: "Managing secondary trauma through somatic tools",
-                color: "#8B5CF6",
-                bgColor: "bg-[#8B5CF6]/10"
+                color: "#c09050",
+                bgColor: "bg-[#c09050]/10"
               },
               { 
                 icon: <BookOpen size={24} />, 
                 title: "Legal Partners", 
                 desc: "Attorneys seeking forensic clinical documentation for immigration cases",
-                color: "#9F7AEA",
-                bgColor: "bg-[#9F7AEA]/10"
+                color: "#d4a84b",
+                bgColor: "bg-[#d4a84b]/10"
               }
             ].map((item, idx) => (
               <motion.div
@@ -804,7 +812,7 @@ const activeData = services[activeService];
                 </div>
                 
                 {/* Title */}
-                <h3 className="font-bold text-black text-lg mb-2 font-['Montserrat'] group-hover:text-[#6B46C1] transition-colors">
+                <h3 className="font-bold text-black text-lg mb-2 font-['Montserrat'] group-hover:text-[#c09050] transition-colors">
                   {item.title}
                 </h3>
                 
@@ -814,7 +822,7 @@ const activeData = services[activeService];
                 </p>
 
                 {/* Decorative line on hover */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-[#c09050] to-[#d4a84b] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
             ))}
           </div>
@@ -834,21 +842,21 @@ const activeData = services[activeService];
       </section>
 
       {/* ========== FINAL CTA ========== */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[#6B46C1]/5 via-white to-[#8B5CF6]/5">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#c09050]/5 via-white to-[#d4a84b]/5">
         <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-[#6B46C1]/10"
+            className="relative bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-[#c09050]/10"
           >
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-[#6B46C1]/5 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#8B5CF6]/5 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#c09050]/5 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#d4a84b]/5 rounded-full blur-2xl" />
             
             <div className="relative z-10">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#6B46C1]/10 flex items-center justify-center">
-                <Flower2 className="w-8 h-8 text-[#6B46C1]" />
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#c09050]/10 flex items-center justify-center">
+                <Flower2 className="w-8 h-8 text-[#c09050]" />
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-4 font-['Montserrat']">
@@ -862,7 +870,7 @@ const activeData = services[activeService];
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/assessment"
-                  className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white font-bold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
+                  className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-black border-2 border-[#c09050] text-white font-bold transition-all duration-500 hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-2xl hover:-translate-y-1 font-['Montserrat']"
                 >
                   Take The Path Forward Assessment
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
@@ -871,7 +879,7 @@ const activeData = services[activeService];
                 <a
                   href="https://calendly.com/manifestcoachingllc"
                   target="_blank"
-                  className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full border-2 border-[#6B46C1]/30 text-[#6B46C1] font-bold hover:bg-[#6B46C1] hover:text-white hover:border-[#6B46C1] transition-all duration-300 font-['Montserrat']"
+                  className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full border-2 border-[#c09050] text-[#c09050] font-bold hover:bg-[#c09050] hover:text-white hover:border-[#c09050] transition-all duration-300 font-['Montserrat']"
                 >
                   <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                   Book Free Consultation

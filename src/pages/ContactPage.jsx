@@ -36,13 +36,11 @@ export default function ContactPage() {
   const [focusedField, setFocusedField] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(false);
 
+  const { pathname } = useLocation();
 
-// Inside your component, add this:
-const { pathname } = useLocation();
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     if (isSubmitted) {
@@ -144,37 +142,37 @@ useEffect(() => {
 
   const contactMethods = [
     {
-      icon: <Phone className="w-6 h-6 text-white" />,
+      icon: <Phone className="w-6 h-6 text-[#fffff]" />,
       title: 'Call Us',
       details: ['(929) 900-3056', '(929) 925-2554'],
       action: 'Call Now',
       link: 'tel:+19299003056',
-      color: 'from-[#6B46C1] to-[#8B5CF6]'
+      color: 'from-[#c09050] to-[#d4a84b]'
     },
     {
-      icon: <Mail className="w-6 h-6 text-white" />,
+      icon: <Mail className="w-6 h-6 text-[#fffff]" />,
       title: 'Email Us',
       details: ['manifestcoachingllc@gmail.com'],
       action: 'Send Email',
       link: 'mailto:manifestcoachingllc@gmail.com',
-      color: 'from-[#6B46C1] to-[#8B5CF6]'
+      color: 'from-[#c09050] to-[#d4a84b]'
     },
     {
-      icon: <Calendar className="w-6 h-6 text-white" />,
+      icon: <Calendar className="w-6 h-6 text-[#fffff]]" />,
       title: 'Book Online',
       details: ['Schedule a consultation', 'via Calendly'],
       action: 'Book Now',
       link: 'https://calendly.com/manifestcoachingllc',
-      color: 'from-[#6B46C1] to-[#8B5CF6]'
+      color: 'from-[#c09050] to-[#d4a84b]'
     }
   ];
 
   return (
-    <div className="relative w-full bg-white overflow-hidden py-29 md:py-32 lg:py-36">
+    <div className="relative w-full bg-white overflow-hidden py-39 md:py-38 lg:py-46">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #6B46C1 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #c09050 0.5px, transparent 0.5px)`,
           backgroundSize: '30px 30px'
         }} />
       </div>
@@ -182,15 +180,15 @@ useEffect(() => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B46C1]/10 border border-[#6B46C1]/20 mb-6">
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B46C1]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c09050]/10 border border-[#c09050]/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#c09050]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c09050]">
               Get in Touch
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 font-['Montserrat']">
             Start Your Journey
-            <span className="block bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] bg-clip-text text-transparent mt-2">
+            <span className="block bg-gradient-to-r from-[#c09050] to-[#d4a84b] bg-clip-text text-transparent mt-2">
               Today
             </span>
           </h1>
@@ -203,8 +201,8 @@ useEffect(() => {
         {/* Main Contact Card */}
         <div className="relative">
           {/* Floating Background Elements */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#6B46C1]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#8B5CF6]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#c09050]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#d4a84b]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
           
           <div className="relative bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -216,8 +214,8 @@ useEffect(() => {
                 </div>
 
                 {isSubmitted ? (
-                  <div className="bg-gradient-to-r from-[#6B46C1]/10 to-[#8B5CF6]/10 rounded-2xl p-8 text-center animate-fade-in border border-[#6B46C1]/20">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#6B46C1] to-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="bg-gradient-to-r from-[#c09050]/10 to-[#d4a84b]/10 rounded-2xl p-8 text-center animate-fade-in border border-[#c09050]/20">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#c09050] to-[#d4a84b] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                       <CheckCircle className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-black mb-2 font-['Montserrat']">Message Sent!</h3>
@@ -229,7 +227,7 @@ useEffect(() => {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
                       <div className={`relative transition-all duration-300 ${focusedField === 'fullName' ? 'transform scale-[1.02]' : ''}`}>
-                        <User className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'fullName' ? 'text-[#6B46C1]' : 'text-gray-400'}`} />
+                        <User className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'fullName' ? 'text-[#c09050]' : 'text-gray-400'}`} />
                         <input
                           type="text"
                           name="fullName"
@@ -240,7 +238,7 @@ useEffect(() => {
                           className={`w-full pl-12 pr-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none bg-white text-gray-700 placeholder-gray-400 ${
                             errors.fullName 
                               ? 'border-red-500 focus:border-red-500' 
-                              : 'border-gray-200 focus:border-[#6B46C1] hover:border-[#6B46C1]/50'
+                              : 'border-gray-200 focus:border-[#c09050] hover:border-[#c09050]/50'
                           }`}
                           placeholder="Your full name"
                         />
@@ -258,7 +256,7 @@ useEffect(() => {
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
                         <div className={`relative transition-all duration-300 ${focusedField === 'email' ? 'transform scale-[1.02]' : ''}`}>
-                          <AtSign className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'email' ? 'text-[#6B46C1]' : 'text-gray-400'}`} />
+                          <AtSign className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'email' ? 'text-[#c09050]' : 'text-gray-400'}`} />
                           <input
                             type="email"
                             name="email"
@@ -269,7 +267,7 @@ useEffect(() => {
                             className={`w-full pl-12 pr-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none bg-white text-gray-700 placeholder-gray-400 ${
                               errors.email 
                                 ? 'border-red-500 focus:border-red-500' 
-                                : 'border-gray-200 focus:border-[#6B46C1] hover:border-[#6B46C1]/50'
+                                : 'border-gray-200 focus:border-[#c09050] hover:border-[#c09050]/50'
                             }`}
                             placeholder="your@email.com"
                           />
@@ -285,7 +283,7 @@ useEffect(() => {
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
                         <div className={`relative transition-all duration-300 ${focusedField === 'phone' ? 'transform scale-[1.02]' : ''}`}>
-                          <Phone className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'phone' ? 'text-[#6B46C1]' : 'text-gray-400'}`} />
+                          <Phone className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300 ${focusedField === 'phone' ? 'text-[#c09050]' : 'text-gray-400'}`} />
                           <input
                             type="tel"
                             name="phone"
@@ -296,7 +294,7 @@ useEffect(() => {
                             className={`w-full pl-12 pr-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none bg-white text-gray-700 placeholder-gray-400 ${
                               errors.phone 
                                 ? 'border-red-500 focus:border-red-500' 
-                                : 'border-gray-200 focus:border-[#6B46C1] hover:border-[#6B46C1]/50'
+                                : 'border-gray-200 focus:border-[#c09050] hover:border-[#c09050]/50'
                             }`}
                             placeholder="(929) 900-3056"
                           />
@@ -317,7 +315,7 @@ useEffect(() => {
                         <MessageSquare className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                         <div
                           onClick={() => setOpenDropdown(!openDropdown)}
-                          className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-gray-200 bg-white cursor-pointer hover:border-[#6B46C1]/50 transition-all duration-300"
+                          className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-gray-200 bg-white cursor-pointer hover:border-[#c09050]/50 transition-all duration-300"
                         >
                           <span className="text-gray-700 pl-8">
                             {services.find(s => s.value === formData.service)?.label}
@@ -333,7 +331,7 @@ useEffect(() => {
                                   setFormData(prev => ({ ...prev, service: service.value }));
                                   setOpenDropdown(false);
                                 }}
-                                className="px-4 py-3 text-gray-700 hover:bg-[#6B46C1]/10 hover:text-[#6B46C1] cursor-pointer transition-all duration-200"
+                                className="px-4 py-3 text-gray-700 hover:bg-[#c09050]/10 hover:text-[#c09050] cursor-pointer transition-all duration-200"
                               >
                                 {service.label}
                               </div>
@@ -351,16 +349,16 @@ useEffect(() => {
                         value={formData.message}
                         onChange={handleChange}
                         rows="4"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 placeholder-gray-400 focus:border-[#6B46C1] hover:border-[#6B46C1]/50 transition-all duration-300 focus:outline-none resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 placeholder-gray-400 focus:border-[#c09050] hover:border-[#c09050]/50 transition-all duration-300 focus:outline-none resize-none"
                         placeholder="Tell me about what you're looking for support with..."
                       />
                     </div>
 
-                    {/* Submit Button */}
+                    {/* Submit Button - Updated to Black + Gold Border */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-['Montserrat']"
+                      className="w-full py-4 bg-black border-2 border-[#c09050] text-white rounded-xl font-semibold shadow-lg hover:bg-[#c09050] hover:border-[#c09050] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-['Montserrat']"
                     >
                       {isSubmitting ? (
                         <>
@@ -379,7 +377,7 @@ useEffect(() => {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
                       {benefits.map((benefit, idx) => (
                         <div key={idx} className="flex flex-col items-center gap-2 text-center">
-                          <div className="text-[#6B46C1]">{benefit.icon}</div>
+                          <div className="text-[#c09050]">{benefit.icon}</div>
                           <span className="text-gray-500 text-xs font-['Plus_Jakarta_Sans']">{benefit.text}</span>
                         </div>
                       ))}
@@ -395,7 +393,7 @@ useEffect(() => {
                   <p className="text-gray-500 text-sm md:text-base font-['Plus_Jakarta_Sans']">I'm here to help and answer any questions you might have.</p>
                 </div>
 
-                {/* Contact Methods */}
+                {/* Contact Methods - Updated with Gold colors */}
                 <div className="space-y-4 mb-8">
                   {contactMethods.map((method, idx) => (
                     <a
@@ -414,7 +412,7 @@ useEffect(() => {
                             {detail}
                           </p>
                         ))}
-                        <span className="inline-flex items-center gap-1 text-sm text-[#6B46C1] mt-2 group-hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1 text-sm text-[#c09050] mt-2 group-hover:gap-2 transition-all">
                           {method.action}
                           <ArrowRight className="w-4 h-4" />
                         </span>
@@ -426,7 +424,7 @@ useEffect(() => {
                 {/* Office Hours */}
                 <div className="border-t border-gray-200 pt-6 mb-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <Clock className="w-5 h-5 text-[#6B46C1]" />
+                    <Clock className="w-5 h-5 text-[#c09050]" />
                     <h3 className="font-semibold text-black font-['Montserrat']">Office Hours</h3>
                   </div>
                   <div className="space-y-2">
@@ -442,7 +440,7 @@ useEffect(() => {
                 {/* License Info */}
                 <div className="border-t border-gray-200 pt-6 mb-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <Shield className="w-5 h-5 text-[#6B46C1]" />
+                    <Shield className="w-5 h-5 text-[#c09050]" />
                     <h3 className="font-semibold text-black font-['Montserrat']">Licensed In</h3>
                   </div>
                   <div className="space-y-1">
@@ -459,7 +457,7 @@ useEffect(() => {
                     <a 
                       href="https://www.instagram.com/manifestcoachingllc/" 
                       target="_blank"
-                      className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-[#6B46C1] flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                      className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-[#c09050] flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                     >
                       <svg className="w-5 h-5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
                         <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" fill="none" stroke="currentColor" strokeWidth="2"/>
@@ -470,7 +468,7 @@ useEffect(() => {
                     <a 
                       href="https://www.linkedin.com/in/ayana-mckanney-lcsw-18879023/" 
                       target="_blank"
-                      className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-[#6B46C1] flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                      className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-[#c09050] flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                     >
                       <svg className="w-5 h-5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
